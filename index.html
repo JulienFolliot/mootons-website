@@ -19,16 +19,54 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
-  <meta name="theme-color" content="#fafafa">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kavoon&family=Lato:wght@400;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" rel="stylesheet">
+
+  <meta name="theme-color" content="#6A57FA">
 </head>
 
-<body>
+<body data-scroll-container>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+  <header data-scroll-section>
+    <nav class="top-nav" data-scroll data-scroll-speed="0">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Qui sommes-nous&nbsp;?</a></li>
+        <li><a href="/">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="logo-container" data-scroll data-scroll-speed="-2">
+      <div class="logo">
+        <!-- ANIMATE LOGO HERE -->
+      </div>
+    </div>
+  </header>
+
+  <section class="game-description-top" data-scroll-section>
+    <div class="bottom-background" data-scroll data-scroll-speed="5"></div>
+    <div class="game-description-background" data-scroll data-scroll-speed="5">
+    </div>
+  </section>
+
+  <div data-scroll-section>
+    <div class="fake-height" style="height: 10000px; background: white;" data-scroll data-scroll-speed="1"></div>
+  </div>
+
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    (function () {
+        var scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true
+});
+        console.log("Locomotive script ok", scroll);
+    })();
+</script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
