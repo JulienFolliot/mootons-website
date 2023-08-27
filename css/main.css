@@ -277,17 +277,17 @@ header {
   justify-content: center;
   align-items: center;
 }
-.top-nav {
+.top-nav { 
   width: 100%;
 }
-
+ 
 .top-nav ul {
-  list-style: none;
+  list-style: none; 
   display: flex;
-  column-gap: 2rem;
+  column-gap: 1rem;
   margin-top: 0;
   justify-content: flex-end;
-  padding: 1.2rem;
+  padding: 2.2rem 1.6rem;
 }
 
 .top-nav ul li a {
@@ -305,39 +305,55 @@ header {
 }
 
 .logo-container {
-  display: flex;
+  display: flex; 
   align-items: center;
   justify-content: center;
-  perspective: 600px;	
+  margin: 100px 0 -100px 0;
+}
+
+.logo-arround {
+  width: 20rem;
+  height: 20rem;
+  background: transparent url('../img/logo-arround.svg') no-repeat center;
+  background-size: contain;
+  margin-bottom: 5rem;
+  transform: rotateY(-90deg);
+	animation: rotateCircleAnimation 2s ease-in-out 0.5s infinite;
+  position: absolute;
+}
+
+.logo-glass {
+  width: 20rem;
+  height: 20rem;
+  background: transparent url('../img/logo-glass.svg') no-repeat center;
+  background-size: 55%;
+  margin-bottom: 5rem;
+  transform: rotateY(-90deg);
+	animation: rotateAnimation 1s linear 0.5s infinite;
+  position: absolute;
 }
 
 .logo {
   width: 20rem;
   height: 20rem;
-  background: transparent url('../img/logo.svg') no-repeat center;
+  background: transparent url('../img/logo-center.svg') no-repeat center;
   background-size: contain;
   margin-bottom: 5rem;
   transform: rotateY(90deg);
-	animation: rotateAnimation 1.2s linear infinite;
+	animation: rotateAnimation 1s linear infinite;
 }
 
 @keyframes rotateAnimation {
-  to {transform: rotateY(90deg);}
-	from {transform: rotateY(-90deg);}
+  0% {transform: rotateY(-90deg);}
+  50% {transform: rotateY(90deg);}
+  100% {transform: rotateY(90deg);}
 }
 
-.game-description-top {
-  top: -200px;
-  position: relative;
+@keyframes rotateCircleAnimation {
+  0% {transform: rotateZ(0deg);}
+  100% {transform: rotateZ(720deg);}
 }
 
-.bottom-background {
-  background: white;
-  height: 1500px;
-  width: 100%;
-  position: absolute;
-  bottom: -800px;
-}
 
 .game-description-background {
   background: transparent url('../img/cloud-background.svg') repeat-x top;
